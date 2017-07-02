@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<head>
+<body>
+	<div ng-app="myapp" ng-controller="myCtrl">
+		姓：<input type="text" ng-model="firstname">
+		名：<input type="text" ng-model="lastname">
+		{{firstname + " " + lastname}}
+	</div>	
+</body>
+<script src="angular.min.js"></script>
+<script>
+	var app = angular.module('myapp',[]);
+	app.controller('myCtrl',function($scope){
+		$scope.firstname = "Jonh";
+		$scope.lastname = "smith";	
+	});
+</script>
+</html>
