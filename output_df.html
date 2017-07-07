@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>let's have a party</title>
+</head>
+<body>
+	<div ng-controller="MyController1">
+		<textarea cols="80" rows="20" ng-model="textarea1"></textarea>
+		<h1>{{textarea1}}</h1>
+		</br>
+		<input type="button" style="width: 100px;height: 60px;" ng-click="getTextArea()" value="click-me!">
+
+		<h2 style="color: red">{{v}}</h2>
+	</div>
+	
+	
+	
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module("myapp",[]);
+	var a;
+	var b = [];
+	var c = [];
+	var m = 0;
+	app.controller("MyController1",function($scope){
+		
+		$scope.getTextArea = function(){
+			a = $scope.textarea1;
+			a = a.split("\n");
+			for (var i = 0; i < a.length; i++) {
+					b[i] = a[i].split(/[ ]+/);
+			}
+			
+			for (var i = 0; i < b.length; i++) {
+				if(b[i][3] < 3145728 && (b[i][2]/b[i][1]) > 0.75){
+					c[m] = b[i];
+					m ++;
+				}
+			}
+			$scope.v = c;
+			console.log(c);
+		};
+
+	});
+	
+</script>
+</body>
+</html>
