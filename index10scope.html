@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<head>
+<style>
+
+</style>
+<body>
+	<form name="myform" ng-app="myapp" ng-controller="myCtrl">
+		<h1>{{nice}}</h1>
+		<input type="button" ng-click="nicejob()" value="dianwo"></input>	
+	</form>	
+</body>
+<script src="angular.min.js"></script>
+<script>
+	var app = angular.module('myapp',[]);
+	app.controller('myCtrl',function($scope){
+		$scope.name = "Jonh";
+		$scope.nicejob = function(){
+			$scope.nice = 'hello my name is ' + $scope.name + '!';	
+		}
+			
+	});
+</script>
+</html> 
